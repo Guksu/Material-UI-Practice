@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Button variant="text">Text</Button>
+      <Button variant="contained" style={{ color: "red" }}>
+        Contained
+      </Button>
+      <Button variant="outlined" startIcon={<DeleteIcon />}>
+        삭제
+      </Button>
+      <br />
+      <Stack direction="row" spacing={1}>
+        <IconButton aria-label="delete" size="small">
+          <DeleteIcon fontSize="inherit" />
+        </IconButton>
+        <IconButton aria-label="delete" disabled size="large">
+          <DeleteIcon fontSize="inherit" />
+        </IconButton>
+      </Stack>
+    </>
   );
 }
 
